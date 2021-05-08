@@ -13,34 +13,44 @@
     <title>Admin Panel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/admin/plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="admin/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="/admin/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
-    <link href="admin/css/style.min.css" rel="stylesheet">
+    <link href="/admin/css/style.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
         @include('layouts.masteradminnavbar')
         @include('layouts.masteradminsidebar')
-        @yield('content')
+        <div class="page-wrapper">
+            @yield('content')
+        </div>
     </div>
-</body>
-    <script src="admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap-dropdown.js"></script>
+
+    <script src="/admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="admin/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="admin/js/app-style-switcher.js"></script>
-    <script src="admin/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="/admin/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/js/app-style-switcher.js"></script>
+    <script src="/admin/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
-    <script src="admin/js/waves.js"></script>
+    <script src="/admin/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="admin/js/sidebarmenu.js"></script>
+    <script src="/admin/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="admin/js/custom.js"></script>
+    <script src="/admin/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="admin/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="admin/js/pages/dashboards/dashboard1.js"></script>
+    <script src="/admin/plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="/admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="/admin/js/pages/dashboards/dashboard1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-toggle').dropdown()
+        });
+    </script>
+</body>
+
 </html>

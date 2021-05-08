@@ -21,6 +21,7 @@ Route::prefix('/user')->group(function () {
 
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/profile', 'AdminController@profile')->name('admin.profile');
 });
 
 Route::get('/', 'HomeController@index')->name('index');

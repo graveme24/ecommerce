@@ -50,10 +50,26 @@
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
-                <li>
-                    <a class="profile-pic" href="#">
-                        <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
-                            class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                <li class="dropdown">
+                    @if(Auth::user()->hasRole('admin'))
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: rgb(7, 7, 7);">
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Home</a><br>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endif
                 </li>
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
@@ -62,3 +78,4 @@
         </div>
     </nav>
 </header>
+
